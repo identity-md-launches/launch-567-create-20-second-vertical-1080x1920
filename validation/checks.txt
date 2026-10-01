@@ -1,0 +1,13 @@
+Local validation, 2026-10-01
+Offline runtime extraction and full 600-frame render: PASS
+FFprobe: 20 seconds, 1080x1920, 30 fps, H.264/yuv420p, AAC mono 44100 Hz: PASS
+Full audio/video decode with bundled FFmpeg: PASS (exit 0)
+Command: test/scratch/runtime/bin/ffmpeg -v error -i artifacts/video.mp4 -c:v wrapped_avframe -c:a aac -f null pipe:1
+MP4 top-level atoms: [('ftyp', 0, 32), ('moov', 32, 20820), ('free', 20852, 8), ('mdat', 20860, 2069854)]
+Faststart (moov before mdat): PASS
+Video bytes: 2090714
+SHA-256: 847ceea83dec17288385f42fafae079c6b45c5c2fc15447abf7f9186d04a0638
+Decoded audio mean: -19.1 dB; peak: -1.2 dB (FFmpeg volumedetect)
+Visual inspection: nine-frame renderer contact sheet and decoded gold reveal frame.
+These are local technical checks, not independent artistic certification.
+Source file bytes before this final size line: 3,947,130; below 8,388,608-byte cap. Scratch and separately delivered video excluded.
